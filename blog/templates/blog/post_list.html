@@ -7,16 +7,12 @@
             <h1><a href="/">Naman's Blog</a></h1>
         </div>
 
-        <div>
-            <p>Published Date:</p>
-            <h2><a href="">My First Post</a></h2>
-            <p>Blah Blah!!</p>
-        </div>
-         
-        <div>
-            <p>Published Date:</p>
-            <h2><a href="">My Second Post</a></h2>
-            <p>Blah Blah!!</p>
-        </div>    
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }} </p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}    
     </body>   
 </html>
